@@ -1,0 +1,244 @@
+@import url('https://fonts.cdnfonts.com/css/pok');
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-rows: 10vh repeat(8, 10vh) 10vh;
+}
+
+.header-container {
+  width: 100%;
+  height: 100%;
+  grid-row: 1/2;
+}
+
+.search-container {
+  width: 100%;
+  grid-row: 2/4;
+}
+
+.result-container {
+  width: 100%;
+  height: 100%;
+  grid-row: 4/10;
+}
+
+.footer-container {
+  width: 100%;
+  grid-row: 10/11;
+  background-color: #F44242;
+  color: white;
+  text-align: center;
+}
+
+.divTitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: #F44242;
+}
+
+.divTitle .imgTitle {
+  width: 10%;
+  height: 150%;
+}
+
+.divSearch {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.inputSearch {
+  font-family: Roboto;
+  font-size: 1.2rem;
+  width: 30%;
+}
+
+.footer {
+  font-family: Roboto;
+  font-size: 1.2rem;
+}
+
+.buttonSearch {
+  margin-top: 1%;
+  width: 30%;
+  box-shadow: inset 0px 34px 0px -15px #b54b3a;
+  background-color: #a73f2d;
+  border: 1px solid #241d13;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 9px 23px;
+  text-decoration: none;
+  text-shadow: 0px -1px 0px #7a2a1d;
+}
+
+.poke {
+  width: 100%;
+  margin-top: 5%;
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  width: 20%;
+  height: 30vh;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 5px 5px 0 0;
+}
+
+.card p {
+  text-align: center;
+  font-family: 'Pokemon Solid', sans-serif;
+  font-size: 1.2rem;
+}
+
+.error {
+  font-family: Roboto;
+  font-size: 1.2rem;
+  color: red;
+}
+
+.card-image {
+  background-color: transparent;
+  width: 50%;
+  height: 25vh;
+  padding-left: 25%;
+  perspective: 1000px;
+}
+
+.card-image-inner {
+  position: relative;
+  width: 100%;
+  height: 15vh;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+}
+
+.card-image:hover .card-image-inner {
+  transform: rotateY(180deg);
+}
+
+.card-image-front,
+.card-image-back {
+  position: absolute;
+  width: 100%;
+  height: 140%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  background-color: white
+}
+
+.card-image-back {
+  transform: rotateY(180deg);
+}
+
+.custom-loader {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 8px solid;
+  border-color: #E4E4ED;
+  border-right-color: #F44242;
+  animation: s2 1s infinite linear;
+}
+
+
+@keyframes s2 {
+  to {
+    transform: rotate(1turn)
+  }
+}
+
+/*Smartphone media*/
+@media only screen and (min-width: 0px) and (max-width : 600px) {
+  .divTitle .imgTitle {
+    width: 30%;
+    height: 150%;
+  }
+
+  .inputSearch {
+    width: 80vw;
+  }
+
+  .buttonSearch {
+    margin-top: 2%;
+    width: 80vw;
+  }
+
+  .card {
+    width: 80vw;
+  }
+
+  .card-image {
+    width: 50%;
+    height: 40vh;
+  }
+
+  .card-image-inner {
+    width: 100%;
+    height: 20vh;
+  }
+
+  .card-image-front,
+  .card-image-back {
+    width: 100%;
+    height: 100%;
+  }
+
+
+}
+
+/*Tablet media*/
+@media only screen and (min-width: 600px) and (max-width : 1200px) {
+
+
+  .card {
+    width: 30vw;
+  }
+
+  .card-image {
+    width: 100%;
+    height: 40vh;
+  }
+
+  .card-image-inner {
+    width: 50%;
+    height: 20vh;
+  }
+
+  .card-image-front,
+  .card-image-back {
+    width: 100%;
+    height: 130%;
+  }
+}
